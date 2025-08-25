@@ -1,4 +1,11 @@
-* 서비스 계층 추가
-* DTO를  REST API의 입출력에 사용
-* 컨트롤러 -> 서비스 -> 레포지토리 순서
-* 엔티티는 하나만
+### [수업중 2-4] Spring Boot와 JPA(Java Persistence API) 활용
+
+* Student 과 StudentDetail 1:1 (OneToOne) 엔티티 연관관계
+    * FetchType.LAZY vs FetchType.EAGER
+    * @JoinColumn, mappedBy
+    * 연관관계의 주인(owner 와 종속(non-owner)
+        * Owner(BookDetail), Non-Owner(Book)
+* DTO
+* Controller
+* Service
+* Repository
