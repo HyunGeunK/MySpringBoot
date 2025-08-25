@@ -1,7 +1,6 @@
 package com.rookies4.myspringboot.exception.advice;
 
 import com.rookies4.myspringboot.exception.BusinessException;
-import com.rookies4.myspringboot.exception.advice.ErrorObject;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
