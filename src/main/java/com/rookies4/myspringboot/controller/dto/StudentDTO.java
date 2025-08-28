@@ -26,11 +26,11 @@ public class StudentDTO {
         @NotBlank(message = "Student number is required")
         @Size(max = 20, message = "Student number cannot exceed 20 characters")
         private String studentNumber;
-        
+
         @Valid
         private StudentDetailDTO detailRequest;
     }
-    
+
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
@@ -39,7 +39,7 @@ public class StudentDTO {
         @NotBlank(message = "Address is required")
         @Size(max = 200, message = "Address cannot exceed 200 characters")
         private String address;
-        
+
         @NotBlank(message = "Phone number is required")
         @Size(max = 20, message = "Phone number cannot exceed 20 characters")
         private String phoneNumber;
@@ -47,7 +47,7 @@ public class StudentDTO {
         @NotBlank(message = "Email is required")
         @Size(max = 100, message = "Email cannot exceed 100 characters")
         private String email;
-        
+
         private LocalDate dateOfBirth;
     }
 
@@ -60,19 +60,19 @@ public class StudentDTO {
         private String name;
         private String studentNumber;
         private StudentDetailResponse detail;
-        
+
         //Entity를 ResponseDTO로 변환  조건식 ? true : false
         public static Response fromEntity(Student student) {
             StudentDetailResponse detailResponse = student.getStudentDetail() != null
                     ? StudentDetailResponse.builder()
-                        .id(student.getStudentDetail().getId())
-                        .address(student.getStudentDetail().getAddress())
-                        .phoneNumber(student.getStudentDetail().getPhoneNumber())
-                        .email(student.getStudentDetail().getEmail())
-                        .dateOfBirth(student.getStudentDetail().getDateOfBirth())
-                        .build()
+                    .id(student.getStudentDetail().getId())
+                    .address(student.getStudentDetail().getAddress())
+                    .phoneNumber(student.getStudentDetail().getPhoneNumber())
+                    .email(student.getStudentDetail().getEmail())
+                    .dateOfBirth(student.getStudentDetail().getDateOfBirth())
+                    .build()
                     : null;
-            
+
             return Response.builder()
                     .id(student.getId())
                     .name(student.getName())
@@ -81,7 +81,7 @@ public class StudentDTO {
                     .build();
         }
     }
-    
+
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
